@@ -1,6 +1,6 @@
 # Shapefile → PostGIS-ready GeoJSON
 
-Convert Swiss shapefiles (CH1903+ / LV95 and other CRS) to a single **Polygon** or **MultiPolygon** GeoJSON feature, suitable for PostGIS import.
+Convert to a single **Polygon** or **MultiPolygon** GeoJSON feature, suitable for PostGIS import.
 
 Handles two common cases:
 
