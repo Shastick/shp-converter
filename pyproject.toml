@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shp-converter"
+version = "0.1.0"
+description = "Convert Swiss shapefiles to PostGIS-ready GeoJSON (Polygon/MultiPolygon)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1",
+    "pyogrio>=0.7",
+    "pyproj>=3.6",
+    "shapely>=2.0",
+]
+
+[project.scripts]
+shp2geojson = "shp_converter.cli:main"
+shp-check = "shp_converter.check:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["shp_converter*"]
+
+[dependency-groups]
+dev = [
+    "geopandas>=1.0",
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
